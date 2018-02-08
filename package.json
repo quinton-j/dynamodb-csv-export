@@ -1,0 +1,17 @@
+{
+    "name": "dynamodb-csv-export",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Q",
+    "license": "MIT",
+    "dependencies": {
+        "aws-sdk": "^2.190.0",
+        "dynamodb-marshaler": "^2.0.0",
+        "json2csv": "^3.11.5",
+        "minimist": "^1.2.0"
+    }
+}
