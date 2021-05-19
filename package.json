@@ -9,10 +9,10 @@
     "author": "Q",
     "license": "MIT",
     "dependencies": {
-        "aws-sdk": "^2.726.0",
+        "aws-sdk": "^2.909.0",
         "dynamodb-marshaler": "^2.0.0",
-        "json2csv": "^5.0.1",
-        "lodash": "^4.17.19",
+        "json2csv": "^5.0.6",
+        "lodash": "^4.17.21",
         "minimist": "^1.2.5"
     }
 }
