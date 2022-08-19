@@ -1,7 +1,7 @@
 const minimist = require('minimist');
 const Aws = require('aws-sdk');
 var unmarshalItem = require('dynamodb-marshaler').unmarshalItem;
-const json2csv = require('json2csv');
+const { parse } = require('json2csv');
 const fs = require('fs');
 
 const { role, region, table, output } = validateArgs(minimist(process.argv.slice(2), {
@@ -27,7 +27,7 @@ creds.refresh(error => {
             .then(records => {
                 console.info(`Finished reading table and found ${records.length}`);
                 const fields = records.length === 0 ? [] : Object.keys(records[0]);
-                const csv = json2csv({ data: records, fields });
+                const csv = parse(records, { fields });
                 fs.writeFileSync(output, csv);
                 console.info(`Successfully wrote output to ${output}`);
             }).catch(error => terminate(error));
